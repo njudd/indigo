@@ -3,7 +3,7 @@ name: Nicholas Judd
 bio: Neurosciencist at Karolinska Institutet. 
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: Homepage for Nicholas Judd
 
 # if it's an external image, update below for true
 # better with square images
@@ -16,7 +16,7 @@ resume: true
 resume-external: true
 resume-url: assets/NicholasJudd_cv_industry.pdf
 
-url: https://njudd.com
+url: https://determined-clarke-e0be6e.netlify.app
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
