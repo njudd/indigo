@@ -2,7 +2,7 @@
 title: "Spatial Cognition"
 layout: post
 date: 2021-03-23 22:10
-tag: jekyll
+#tag: jekyll
 # image: /assets/proj_imgs/spatialcognition/img1.png
 headerImage: true
 projects: true
