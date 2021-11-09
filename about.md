@@ -21,5 +21,5 @@ layout: page
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="https://www.njudd.com/indigo-jekyll-theme/">Spatial Cognition</a></li>
+	<li><a href="https://www.njudd.com/spatial-cognition/">Spatial Cognition RCT</a></li>
 </ul>
