@@ -41,7 +41,7 @@ We measured mathematics at three timepoints with in-app tests (i.e., addition, s
 <div class="side-by-side">
     <div class="toleft">
         <img class="image" src="https://njudd.com/assets/proj_imgs/spatialcognition/img3.png" alt="Alt Text">
-        <figcaption class="caption">Photo by John Doe</figcaption>
+        <figcaption class="caption">Correlation Matrix</figcaption>
     </div>
 
     <div class="toright">
