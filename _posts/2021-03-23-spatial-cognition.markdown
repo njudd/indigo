@@ -24,19 +24,32 @@ Spatial and mathematical abilities are strongly associated. Here, we analysed da
 For an in-depth look check out the [paper](https://rdcu.be/ck9fP) or the [Github repo](https://github.com/njudd/spatialcognition)! If you have any further questions just reach out and ask me :)
 
 ---
-### Overview
+### Brief Overview
 
 Every child completed identical training in the first week, on the 2nd week (out of 7) they were randomized into one of the 5 training plans below. These plans differed on the amounts of working memory, rotation, or non-verbal reasoning exercises. 
 
 ![img2](/assets/proj_imgs/spatialcognition/img2.png)
+
+![img4](/assets/proj_imgs/spatialcognition/img4.png)
 
 ---
 We measured mathematics at three timepoints with in-app tests (i.e., addition, subtraction & number comparions) which we combined into a latent mathematical factor.
 
 ![measuremod](/assets/proj_imgs/spatialcognition/Vektor_measuremod_strict.png)
 
-As expected this mathematical factor was highly correlated with the training tasks
-![img3](/assets/proj_imgs/spatialcognition/img3.png)
+
+<div class="side-by-side">
+    <div class="toleft">
+        <img class="image" src="njudd.com/assets/proj_imgs/spatialcognition/img3.png" alt="Alt Text">
+        <figcaption class="caption">Photo by John Doe</figcaption>
+    </div>
+
+    <div class="toright">
+        <p> As expected this mathematical factor was highly correlated with the training tasks. As seen on the training curves below all of the trained tasks signficantly imporved over the seven weeks.</p>
+    </div>
+</div>
+
+![img5](/assets/proj_imgs/spatialcognition/img5.png)
 
 ---
 
