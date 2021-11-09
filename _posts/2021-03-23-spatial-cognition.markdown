@@ -1,5 +1,5 @@
 ---
-title: "Spatial Cognition"
+title: "Spatial Cognition RCT"
 layout: post
 date: 2021-03-23 22:10
 #tag: jekyll
@@ -24,11 +24,19 @@ Spatial and mathematical abilities are strongly associated. Here, we analysed da
 For an in-depth look check out the [paper](https://rdcu.be/ck9fP) or the [Github repo](https://github.com/njudd/spatialcognition)! If you have any further questions just reach out and ask me :)
 
 ---
+### Overview
 
+Every child completed identical training in the first week, on the 2nd week (out of 7) they were randomized into one of the 5 training plans below. These plans differed on the amounts of working memory, rotation, or non-verbal reasoning exercises. 
+
+![img2](/assets/proj_imgs/spatialcognition/img2.png)
+
+---
+We measured mathematics at three timepoints with in-app tests (i.e., addition, subtraction & number comparions) which we combined into a latent mathematical factor.
 
 ![measuremod](/assets/proj_imgs/spatialcognition/Vektor_measuremod_strict.png)
 
-We measured mathematics at three timepoints with in-app tests (i.e., addition, subtraction & number comparions) which we combined into a latent mathematical factor.
+As expected this mathematical factor was highly correlated with the training tasks
+![img3](/assets/proj_imgs/spatialcognition/img3.png)
 
 ---
 
