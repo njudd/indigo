@@ -45,7 +45,7 @@ We measured mathematics at three timepoints with in-app tests (i.e., addition, s
     </div>
 
     <div class="toright">
-        <p> As expected this mathematical factor was highly correlated with the training tasks. As seen on the training curves below all of the trained tasks signficantly imporved over the seven weeks.</p>
+        <p> As expected this mathematical factor was highly correlated with mean perfomance in the training tasks in the first week. As seen on the training curves below all of the trained tasks signficantly imporved over the seven weeks. The lower correlation between NVR and baseline Math is most likely due to constrained variance in the first week, which can be seen on the training curves of NVR.</p>
     </div>
 </div>
 
