@@ -1,0 +1,107 @@
+---
+title: "Residualization reinterpretation"
+author:
+  - name: "Nicholas Judd"
+    url: https://staff.ki.se/people/nicholas-judd
+    affiliation: Karolinska Institute
+    affiliation_url: https://ki.se/en
+    orcid_id: 0000-0002-0196-9871
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(MASS); library(data.table);library(kableExtra); library(equatiomatic); 
+library(sjPlot); library(lm.beta)
+```
+
+## How standardized effects vary with residualization
+
+This is a quick simulation showing the [Frisch-Waugh-Lovell theorem](https://en.wikipedia.org/wiki/Frisch%E2%80%93Waugh%E2%80%93Lovell_theorem) with two correlated predictors. It also shows how residualizing only the dependent variable leads to a different result and how rescaling can artificially inflate your standardized effect.
+
+The Frisch-Waugh-Lovell theorem states that residualizing all variable in the linear model for a variable (e.g., X2) is equal to adding it as a covariate. Therefore B1 in the two equations are identical:
+
+$$
+\operatorname{Y} = \alpha + \beta_{1}(\operatorname{X1}) + \beta_{2}(\operatorname{X2}) + \epsilon
+$$
+$$
+\operatorname{Y_{residualized\_X2}} = \alpha + \beta_{1}(\operatorname{X1_{residualized\_X2}}) + \epsilon
+$$
+
+
+
+
+### Data simulation
+
+
+
+```{r sim data and data generation, echo=FALSE}
+sig <- matrix(c(1.0, 0.8, 0.5, #DV
+                0.8, 1.0, 0.5, # PGS
+                0.5, 0.5, 1.0), # SES
+              nrow = 3)
+
+x <- data.frame(mvrnorm(n = 1000, mu = rep(0, 3), Sigma = sig, empirical = TRUE))
+
+colnames(x) <- c('Y', "X1", "X2")
+cr <- cor(x) %>% round(2)
+
+# making variables with X2 residualized
+x$Y_X2res <- as.data.frame(lm(Y ~ X2, data = x)$residuals)[,1]
+x$X1_X2res <- as.data.frame(lm(X1 ~ X2, data = x)$residuals)[,1]
+
+# now I just standardize the residuals
+c <- c("Y_X2res", "X1_X2res") # cols to scale (mean = 0, sd = 1)
+setDT(x)
+x[, (paste(c, "_Scaled", sep="")) := lapply(.SD, function(x) as.numeric(scale(x))), .SDcols=c]
+
+```
+First we simulate data of a 1000 subjects with 3 correlated variables in standard units (mean = 0, sd = 1). Y stands for the dependent variable while X1 & X2 are predictors with a 0.5 correlation. 
+
+
+
+```{r corrplot, out.width= "65%", out.extra='style="float:right; padding:10px"', echo = F}
+
+corrplot::corrplot.mixed(cr, number.cex=2, tl.cex = 2)
+```
+We than make two more variables by extracting the residuals from 1) a model with Y regressed on X2 and 2) a model with X1 regressed on X2. These two variables (i.e., Y_X2res & X1_X2res) by construction are unrelated to X2. We than standardize these variables making (Y_X2res_S & X1_X2res_S). 
+
+
+```{r descriptives, echo=FALSE}
+as.data.frame(psych::describe(x))%>% round(2) %>% dplyr::select(n, mean, sd) %>% kbl(caption = "An overview of simluated variables") %>% kable_styling()
+```
+
+
+### Model comparison
+
+Here we show the equivalence between model *** and ***. X1's effect on Y, is of equal magnitude along with the SE. 
+
+```{r standard models, echo=FALSE}
+
+m1 <- lm(Y ~ X1 + X2, data = x)
+m2 <- lm(Y_X2res ~ X1_X2res, data = x)
+
+
+tab_model(m1, m2, show.se = T, p.style = "stars")
+```
+
+It is quite common to standardize to get interpretable effect sizes, yet if we standardize after already residualizing we are inflating our effect sizes because it is now the variance in Y neglecting X2's contribution (the "pie" is smaller). This issue can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
+
+
+Hmmmm... WHY IS IT NOT WORKING?!?!?! 
+Is it beacuse thers is only one var?!?!?
+
+```{r accidently standardizing}
+
+# m3 <- lm.beta(m2)
+# tab_model(m3, show.se = T)
+
+tab_model(m2, show.se = T, show.std = T, p.style = "stars")
+m3 <- lm.beta(lm(Y_X2res ~ X1_X2res, data = x))
+
+lm(Y_X2res_Scaled ~ X1_X2res_Scaled, data = x)
+```
+`
+
+
