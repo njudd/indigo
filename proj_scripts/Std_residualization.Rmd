@@ -18,7 +18,9 @@ library(sjPlot); library(lm.beta)
 
 ## How standardized effects vary with residualization
 
-The [Frisch-Waugh-Lovell theorem](https://en.wikipedia.org/wiki/Frisch%E2%80%93Waugh%E2%80%93Lovell_theorem) theorem states that residualizing all variables in the linear model for a variable (e.g., X2) is equal to adding it as a covariate. Therefore B1 in the two equations are identical:
+The [Frisch-Waugh-Lovell theorem](https://en.wikipedia.org/wiki/Frisch%E2%80%93Waugh%E2%80%93Lovell_theorem) theorem states that residualizing all variables in the linear model for a variable (e.g., X2) is equal to adding it as a covariate. 
+
+Therefore B1 in the two equations are identical:
 
 $$
 \operatorname{Y} = \alpha + \beta_{1}(\operatorname{X1}) + \beta_{2}(\operatorname{X2}) + \epsilon
@@ -34,21 +36,20 @@ This is a quick simulation showing the Frisch-Waugh-Lovell with two correlated p
 ### Data simulation
 
 ```{r sim data and data generation, echo=FALSE}
-sig <- matrix(c(1.0, 0.8, 0.5, 0.3, #DV
-                0.8, 1.0, 0.5, 0.7, # PGS
-                0.5, 0.5, 1.0, 0.3,
-                0.3, 0.7, 0.3, 1), # SES
-              nrow = 4)
+sig <- matrix(c(1.0, 0.5, 0.6,
+                0.5, 1.0, 0.3,
+                0.6, 0.3, 1.0),
+              nrow = 3)
 
-x <- data.frame(mvrnorm(n = 1000, mu = rep(0, 4), Sigma = sig, empirical = TRUE))
+x <- data.frame(mvrnorm(n = 1000, mu = rep(0, 3), Sigma = sig, empirical = TRUE))
 
-colnames(x) <- c('Y', "X1", "X2", "X3")
+colnames(x) <- c('Y', "X1", "X2")#, "X3")
 cr <- cor(x) %>% round(2)
 
 # making variables with X2 residualized
-x$Y_X3res <- as.data.frame(lm(Y ~ X3, data = x)$residuals)[,1]
-x$X1_X3res <- as.data.frame(lm(X1 ~ X3, data = x)$residuals)[,1]
-x$X2_X3res <- as.data.frame(lm(X2 ~ X3, data = x)$residuals)[,1]
+x$Y_X2res <- as.data.frame(lm(Y ~ X2, data = x)$residuals)[,1]
+x$X1_X2res <- as.data.frame(lm(X1 ~ X2, data = x)$residuals)[,1]
+#x$X2_X3res <- as.data.frame(lm(X2 ~ X3, data = x)$residuals)[,1]
 
 
 # now I just standardize the residuals; just using the tab_model function to show my point
@@ -73,37 +74,48 @@ corrplot::corrplot.mixed(cr, number.cex=2, tl.cex = 2)
 ```
 
 
-```{r descriptives, echo=FALSE, include=F}
+```{r descriptives, echo=FALSE, include=F, eval = F}
 as.data.frame(psych::describe(x))%>% round(2) %>% dplyr::select(n, mean, sd) %>% kbl(caption = "An overview of simluated variables") %>% kable_styling()
 ```
 
 
-### Model comparison
-
-Here we show the equivalence between model *** and ***. X1's effect on Y, is of equal magnitude along with the SE. 
-
-```{r standard models, echo=FALSE}
-
-m1 <- lm(Y ~ X1 + X3, data = x)
-m2 <- lm(Y_X3res ~ X1_X3res, data = x)
-
-
-tab_model(m1, m2, show.se = T, show.std = T, show.ci = F, show.p = F)
+```{r fit models, echo = F}
+m1 <- lm(Y ~ X1 + X2, data = x)
+m2 <- lm(Y_X2res ~ X1, data = x)
+m3 <- lm(Y_X2res ~ X1_X2res, data = x)
 ```
 
-It is quite common to standardize to get interpretable effect sizes, yet if we standardize after already residualizing we are inflating our effect sizes because it is now the variance in Y neglecting X2's contribution (the "pie" is smaller). This issue can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
+### 1. Frisch-Waugh-Lovell
 
+In the table below we can see that the effect size and SE are the same when we residualize both the dependent and independent variable.
+
+```{r table FWL, echo=FALSE}
+tab_model(m1, m3, show.se = T, show.ci = F, show.p = F)
+```
+
+### 2. Scaling inflates effect sizes
+
+If we standardize our residualized model it will inflate the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
 
 $$
  \beta_{1}(\operatorname{SD_{X}})/SD_{Y}
 $$
 
+```{r table std, echo=FALSE}
+tab_model(m1, m3, show.se = T, show.std = T, show.ci = F, show.p = F)
+```
 
-Why is it not an issue with a single var, is it just cause it's not correlated enough???
+### 3. Residualizing only the DV changes our interpretation
+
+When we only residualize the dependent variable it changes the meaning of the other term when the two are related.
 
 
+```{r table dv, echo=FALSE}
+tab_model(m1, m2, show.se = T, show.std = T, show.ci = F, show.p = F)
+```
 
-```{r accidently standardizing, echo = F}
+
+```{r accidently standardizing, echo = F, include=F, eval = F}
 
 
 m3 <- lm(Y ~ X1 + X2 + X3, data = x)
