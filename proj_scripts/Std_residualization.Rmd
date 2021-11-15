@@ -90,7 +90,7 @@ In the table below we can see that the effect size and SE (of X1) are the same w
 
 ```{r table FWL, echo=FALSE}
 tab_model(m1, m3, show.se = T, 
-          show.ci = F, show.p = F, show.r2 = F)
+          show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
 ### 2. Scaling inflates effect sizes
@@ -103,8 +103,11 @@ $$
 
 ```{r table std, echo=FALSE}
 tab_model(m1, m3, show.se = T, show.std = T, 
-          show.ci = F, show.p = F, show.r2 = F)
+          show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
+
+
+
 
 ### 3. Residualizing only the DV changes our interpretation
 
@@ -113,7 +116,7 @@ When we only residualize the dependent variable it changes the meaning of the ot
 
 ```{r table dv, echo=FALSE}
 tab_model(m1, m2, show.se = T, show.std = T, 
-          show.ci = F, show.p = F, show.r2 = F)
+          show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
 
