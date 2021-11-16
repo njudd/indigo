@@ -2,7 +2,7 @@
 title: "Effect size literature"
 layout: post
 date: 2021-11-16 11:47
-headerImage: true
+# headerImage: true
 projects: true
 description: "A list of effect size literature for KI Dep Clinical Lunch seminar"
 category: project
