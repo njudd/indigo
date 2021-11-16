@@ -13,6 +13,17 @@ category: project
 externalLink: false
 ---
 
+## Materials for KI Dep Clinical Neuroscience Seminar
+
+### Slide Deck (without videos)
+<a
+  href="https://www.dropbox.com/s/9ipur52kur9xzuq/UCL_CEN_nkj.pptx?dl=0"
+  class="dropbox-embed"
+  data-height="300px"
+  data-width="600px"
+></a>
+
+
 
 ### Re-evaluating Cohen's standards
 
