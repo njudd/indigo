@@ -69,7 +69,9 @@ We measured mathematics at three timepoints with in-app tests (i.e., addition, s
 </div>
 
 
-It is hard to estimate the effect size of our intervention since we have no training plans without cognitively demanding tasks. Another consideration is that we only changed 30% of the training programs, therefore all children completed a similar 70% of mathematic and working memory training. The difference between the least effective (rotation heavy) and most effective training plan (NVR only) was .06 SD’s. While this would be classically considered a very small effect size. Using modern effect size metrics in education this would be classified as an intervention with a medium effect which has a low cost of implementation and is easy to scale ([Kraft, 2020](https://paperpile.com/shared/ItPIu0)). For a list of relevant recent effect size literature see section '[effectsizes](https://njudd.com/effectsize)'.
+It is hard to estimate the effect size of our intervention since we have no training plans without cognitively demanding tasks. Another consideration is that we only changed 30% of the training programs, therefore all children completed a similar 70% of mathematic and working memory training. The difference between the least effective (rotation heavy) and most effective training plan (NVR only) was .06 SD’s. 
+
+While this would be classically considered a very small effect size. Using modern effect size metrics in education this would be classified as an intervention with a medium effect which has a low cost of implementation and is easy to scale ([Kraft, 2020](https://paperpile.com/shared/ItPIu0)). For a list of relevant recent effect size literature see section '[effectsizes](https://njudd.com/effectsize)'.
 
 
 
