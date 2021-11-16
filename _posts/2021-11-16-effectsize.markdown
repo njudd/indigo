@@ -15,8 +15,14 @@ externalLink: false
 
 ## Materials for KI Dep Clinical Neuroscience Seminar
 
-### Slide Deck (without videos)
+**Slide Deck** (without videos)
+
 <iframe src="https://docs.google.com/file/d/1-pIwj7bktXt8G2LcczVmbijD-nKT2kGc/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+**Our paper**
+
+Judd, N., & Klingberg, T. (2021). Training spatial cognition enhances mathematical learning in a randomized study of 17,000 children. Nature Human Behaviour, 1–7. [PDF](https://drive.google.com/file/d/1xGL9n04f    AaQlWgL0g2CMjEHuwRbGOBpH/view?usp=sharing)
+
 
 ### Re-evaluating Cohen's standards
 
