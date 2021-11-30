@@ -21,7 +21,7 @@ url: https://njudd.com
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-analytics-google: 'UA-121727311'
+analytics-google: 'UA-121727311-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
