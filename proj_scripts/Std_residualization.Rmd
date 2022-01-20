@@ -143,7 +143,7 @@ fit_0.56 <- euler(c("X1" = tss_X1, "X2" = tss_X2, "Y" = tss_Y,
 corr_0.56 <- plot(fit_0.56, fills = c("red", "white", "darkred"))
 corr_0.56
 
-x <- x[,-8]
+x <- x[,-6]
 ```
 
 ```{r descriptives, echo=FALSE, include=T, eval = T}
