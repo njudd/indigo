@@ -158,7 +158,7 @@ m3 <- lm(Y_X2res ~ X1_X2res, data = x)
 m4 <- lm(Y ~ X1_X2res, data = x)
 ```
 
-### 1. Frisch-Waugh-Lovell
+### 1. Frisch-Waugh-Lovell replication
 
 In the table below we can see that the effect size and the confidence intervals of `X1` are the same when we residualize both the dependent and independent variable.
 
@@ -192,20 +192,20 @@ tab_model(m1, m2, show.se = F, collapse.se = F,show.std = T,
           show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
-### 4. Residualizing only the IV
+### 4. Residualizing only the IV changes our confidence
 
 This one is problematic, as the magnitude of the effect stays the same **yet** the SE, and in turn, the p-vals differ! 
 
 ```{r table iv, echo=FALSE}
-tab_model(m1, m4, m3, show.se = T, collapse.se = T, digits = 3, show.ci = F, show.p = F, show.r2 = F, show.obs = F)
+tab_model(m1, m4, m3, show.se = T, collapse.se = F, digits = 3, show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
 
-To drive this point home, here are the models refit to the first 100 subjects...
+To drive this point home, here are the models refit to the first 80 subjects...
 
 ```{r models subset refit, echo=F}
 
-x100 <- x[1:100,]
+x100 <- x[1:80,]
 
 # need to re-residualize ofc... 
 x100$Y_X2res <- as.data.frame(lm(Y ~ X2, data = x100)$residuals)[,1]
