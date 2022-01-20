@@ -1622,7 +1622,7 @@ X2_resid
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h3 id="frisch-waugh-lovell">1. Frisch-Waugh-Lovell</h3>
+<h3 id="frisch-waugh-lovell-replication">1. Frisch-Waugh-Lovell replication</h3>
 <p>In the table below we can see that the effect size and the confidence intervals of <code>X1</code> are the same when we residualize both the dependent and independent variable.</p>
 <div class="layout-chunk" data-layout="l-body">
 <table style="border-collapse:collapse; border:none;">
@@ -1900,7 +1900,7 @@ X2
 </tr>
 </table>
 </div>
-<h3 id="residualizing-only-the-iv">4. Residualizing only the IV</h3>
+<h3 id="residualizing-only-the-iv-changes-our-confidence">4. Residualizing only the IV changes our confidence</h3>
 <p>This one is problematic, as the magnitude of the effect stays the same <strong>yet</strong> the SE, and in turn, the p-vals differ!</p>
 <div class="layout-chunk" data-layout="l-body">
 <table style="border-collapse:collapse; border:none;">
@@ -1908,13 +1908,13 @@ X2
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
  
 </th>
-<th colspan="1" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
 Y
 </th>
-<th colspan="1" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
 Y
 </th>
-<th colspan="1" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
 Y_X2res
 </th>
 </tr>
@@ -1926,10 +1926,19 @@ Predictors
 Estimates
 </td>
 <td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
+std. Error
 </td>
 <td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
 Estimates
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+std. Error
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Estimates
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
+std. Error
 </td>
 </tr>
 <tr>
@@ -1937,13 +1946,22 @@ Estimates
 (Intercept)
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.000<br>(0.024)
+-0.000
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.000<br>(0.030)
+0.024
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.000<br>(0.024)
+-0.000
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.030
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.000
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.024
 </td>
 </tr>
 <tr>
@@ -1951,11 +1969,18 @@ Estimates
 X1
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.310<br>(0.026)
+0.310
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.026
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 </td>
 </tr>
 <tr>
@@ -1963,11 +1988,18 @@ X1
 X2
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.476<br>(0.026)
+0.476
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.026
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 </td>
 </tr>
 <tr>
@@ -1977,15 +2009,23 @@ X1_X2res
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.310<br>(0.033)
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.310<br>(0.026)
+0.310
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.033
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.310
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.026
 </td>
 </tr>
 </table>
 </div>
-<p>To drive this point home, here are the models refit to the first 100 subjects…</p>
+<p>To drive this point home, here are the models refit to the first 80 subjects…</p>
 <div class="layout-chunk" data-layout="l-body">
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -2039,28 +2079,28 @@ p
 (Intercept)
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.065
+0.041
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.081
+0.096
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.422
+0.672
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.070
+0.122
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.100
+0.118
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-0.483
+0.304
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
 -0.000
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
-0.080
+0.094
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">
 1.000
@@ -2071,13 +2111,13 @@ p
 X1
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.271
+0.248
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.093
+0.113
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>0.004</strong>
+<strong>0.031</strong>
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 </td>
@@ -2097,10 +2137,10 @@ X1
 X2
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.570
+0.603
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.090
+0.108
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 <strong>&lt;0.001</strong>
@@ -2129,22 +2169,22 @@ X1_X2res
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.271
+0.248
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.115
+0.139
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>0.020</strong>
+0.079
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">
-0.271
+0.248
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">
-0.093
+0.112
 </td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">
-<strong>0.004</strong>
+<strong>0.030</strong>
 </td>
 </tr>
 </table>
