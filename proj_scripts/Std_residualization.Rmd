@@ -6,14 +6,20 @@ author:
     affiliation: Karolinska Institute
     affiliation_url: https://ki.se/en
     orcid_id: 0000-0002-0196-9871
+  - name: "Dr. Bruno Sauce"
+    url: https://brunosauce.net/
+    affiliation: Vrije University
+    affiliation_url: https://research.vu.nl/en/persons/bruno-sauce-silva
+    orcid_id: 0000-0002-9544-0150
 output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(42)
 
 library(MASS); library(data.table);library(kableExtra); library(equatiomatic); 
-library(sjPlot); library(lm.beta)
+library(sjPlot); library(lm.beta); library(eulerr)
 ```
 
 ## How standardized effects vary with residualization
@@ -37,8 +43,8 @@ This is a quick simulation showing the Frisch-Waugh-Lovell with two correlated p
 
 ```{r sim data and data generation, echo=FALSE}
 sig <- matrix(c(1.0, 0.5, 0.6,
-                0.5, 1.0, 0.3,
-                0.6, 0.3, 1.0),
+                0.5, 1.0, 0.4,
+                0.6, 0.4, 1.0),
               nrow = 3)
 
 x <- data.frame(mvrnorm(n = 1000, mu = rep(0, 3), Sigma = sig, empirical = TRUE))
@@ -60,20 +66,87 @@ x$X1_X2res <- as.data.frame(lm(X1 ~ X2, data = x)$residuals)[,1]
 ```
 
 
-First we simulate data of with 1000 subjects:
+First we simulate data with 1000 subjects:
 
 ::: {.floatting}
 
 ```{r corrplot, out.width= "50%", out.extra='style="float:right; padding:0px"', echo = F}
 corrplot::corrplot.mixed(cr, number.cex=2, tl.cex = 2)
 ```
- - 3 correlated variables in standard units (mean = 0, sd = 1)
- - Y reflects the dependent variable while X1 & X2 are predictors
- - We have X2 as a predictor in three linear models with Y & X1 and extract the residuals
- - These variables are coded as Y_X2res & X1_X2res
+ - 3 correlated variables in standard units
+ - `Y` reflects the dependent variable while `X1` & `X2` are predictors
+ - We have `X2` as a predictor in two linear models with `Y` & `X1` as DVs to extract the residuals
+ - These new variables are coded as `Y_X2res` & `X1_X2res`
 :::
 
-```{r descriptives, echo=FALSE, include=F, eval = F}
+```{r venn diag, echo = F}
+# taken from Anna (https://www.kcl.ac.uk/people/anna-furtjes)
+
+#############################################################
+# Work out total sums of squares to work out ground covered by variables
+# total sums of square = sum((dat$X1 - mean(dat$X1))^2)
+
+tss_X1 <- sum((x$X1 - mean(x$X1))^2)
+tss_X2 <- sum((x$X2 - mean(x$X2))^2)
+tss_Y <- sum((x$Y - mean(x$Y))^2)
+
+#############################################################
+# work out overlap between two variables
+
+# 1. Simple overlap between whole brain and X2
+# Percentage in overlap (R2) 
+overlap_X1_X2 <- cor(x$X1, x$X2)^2
+overlap_Y_X2 <- cor(x$Y, x$X2)^2
+overlap_Y_X1 <- cor(x$X1, x$Y)^2
+
+#############################################################
+# work out overlap between three variables
+# 1. work out R2 by two variables (wholebrain ~ BV + IQ)
+# 2. deduct TBV ~ IQ from that to obtain variance shared between whole brain and BV above and beyond IQ
+# 3. TBV ~ BV - 2.result is the overlap of the three variables 
+
+# 1. 34% explained by IQ and BV
+model <- lm(x$X1 ~ x$X2 + x$Y, data = x)
+result1 <- summary(model)$r.squared
+
+# 2. 26% shared between TBV and BV above and beyond IQ
+X1_beyondY <- result1 - overlap_Y_X1
+
+# 3. 
+overlap_all <- overlap_X1_X2 - X1_beyondY
+
+
+### re-do with reference to other trait
+# to double check 
+
+# 1. 7% explained in IQ by TBV and BV
+model <- lm(x$Y ~ x$X1 + x$X2, data = x)
+result1_test <- summary(model)$r.squared
+
+#2. How much variance share IQ and BV above and beyond TBV
+model_resid <- lm(x$X2 ~ x$X1)
+x$X2_resid <- rstandard(model_resid)
+
+model_beyondX1 <- lm(x$Y ~ x$X2_resid)
+#summary(model_beyondTBV)$r.squared
+
+## gets same results as result1_test - overlap_TBV_IQ
+overlap_all <- overlap_Y_X2 - summary(model_beyondX1)$r.squared
+#############################################################
+# fit euler 
+set.seed(1239)
+fit_0.56 <- euler(c("X1" = tss_X1, "X2" = tss_X2, "Y" = tss_Y,
+                    "X1&X2" = tss_X1*(overlap_X1_X2), "X1&Y" = tss_X1*(overlap_Y_X1), 
+                    "X2&Y" = tss_X1*(overlap_Y_X2),
+                    "X1&X2&Y" = tss_Y*overlap_all),
+                  shape = "ellipse")
+corr_0.56 <- plot(fit_0.56)
+corr_0.56
+
+
+```
+
+```{r descriptives, echo=FALSE, include=T, eval = T}
 as.data.frame(psych::describe(x))%>% round(2) %>% dplyr::select(n, mean, sd) %>% kbl(caption = "An overview of simluated variables") %>% kable_styling()
 ```
 
@@ -82,51 +155,106 @@ as.data.frame(psych::describe(x))%>% round(2) %>% dplyr::select(n, mean, sd) %>%
 m1 <- lm(Y ~ X1 + X2, data = x)
 m2 <- lm(Y_X2res ~ X1, data = x)
 m3 <- lm(Y_X2res ~ X1_X2res, data = x)
+m4 <- lm(Y ~ X1_X2res, data = x)
 ```
 
 ### 1. Frisch-Waugh-Lovell
 
-In the table below we can see that the effect size and SE (of X1) are the same when we residualize both the dependent and independent variable.
+In the table below we can see that the effect size and the confidence intervals of `X1` are the same when we residualize both the dependent and independent variable.
 
 ```{r table FWL, echo=FALSE}
-tab_model(m1, m3, show.se = T, 
-          show.ci = F, show.p = F, show.r2 = F, show.obs = F)
+
+tab_model(m1, m3, show.se = F, collapse.se = F, show.p = T, show.r2 = F, show.obs = F)
 ```
 
 ### 2. Scaling inflates effect sizes
 
-If we standardize our residualized model it will inflate the effect sizes. This is because we are rescaling it (see equation below). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
+$$
+ \dfrac{\beta_{1}*\operatorname{SD_{X}}}{SD_{Y}}
+$$
 
-$$
- \beta_{1}(\operatorname{SD_{X}})/SD_{Y}
-$$
+If we standardize our residualized model it will inflate the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
+
 
 ```{r table std, echo=FALSE}
-tab_model(m1, m3, show.se = T, show.std = T, 
+tab_model(m1, m3, show.se = F, collapse.se = F, show.est = F, show.std = T,
           show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
-
-
 
 
 ### 3. Residualizing only the DV changes our interpretation
 
-When we only residualize the dependent variable it changes the meaning of the other term when the two are related.
+When we only residualize the dependent variable it changes the meaning of the other term when the two are related. This is because the common variance between `X1` & `X2` is being thrown out.
 
 
 ```{r table dv, echo=FALSE}
-tab_model(m1, m2, show.se = T, show.std = T, 
+tab_model(m1, m2, show.se = F, collapse.se = F,show.std = T,
           show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
+### 4. Residualizing only the IV
 
-```{r accidently standardizing, echo = F, include=F, eval = F}
+This one is problematic, as the magnitude of the effect stays the same **yet** the SE, and in turn, the p-vals differ! 
 
-
-m3 <- lm(Y ~ X1 + X2 + X3, data = x)
-m4 <- lm(Y_X3res ~ X1_X3res + X2_X3res, data = x)
-
-
-tab_model(m3, m4, show.se = T, show.std = T, show.ci = F, show.p = F)
+```{r table iv, echo=FALSE}
+tab_model(m1, m4, m3, show.se = T, collapse.se = T, digits = 3, show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
+
+
+To drive this point home, here are the models refit to the first 100 subjects...
+
+```{r models subset refit, echo=F}
+
+x100 <- x[1:100,]
+
+# need to re-residualize ofc... 
+x100$Y_X2res <- as.data.frame(lm(Y ~ X2, data = x100)$residuals)[,1]
+x100$X1_X2res <- as.data.frame(lm(X1 ~ X2, data = x100)$residuals)[,1]
+# update the models with less data
+m1 <- update(m1,data=x100)
+m4 <- update(m4,data=x100)
+m3 <- update(m3,data=x100)
+
+
+tab_model(m1, m4, m3, show.se = T, collapse.se = F, digits = 3, show.ci = F, show.p = T, show.r2 = F, show.obs = F)
+
+```
+
+```{r trying with 3 ivs, echo = F, eval=F}
+sig <- matrix(c(1.0, 0.5, 0.6, 0.7,
+                0.5, 1.0, 0.3, 0.4,
+                0.6, 0.3, 1.0, 0.4,
+                0.7, 0.4, 0.4, 1.0),
+              nrow = 4)
+
+x2 <- data.frame(mvrnorm(n = 100, mu = rep(0, 4), Sigma = sig, empirical = TRUE))
+
+colnames(x2) <- c('Y', "X1", "X2", "X3")#, "X3")
+cr <- cor(x2) %>% round(2)
+
+# making variables with X2 residualized
+x2$Y_X2res <- as.data.frame(lm(Y ~ X2, data = x2)$residuals)[,1]
+x2$X1_X2res <- as.data.frame(lm(X1 ~ X2, data = x2)$residuals)[,1]
+x2$X3_X2res <- as.data.frame(lm(X3 ~ X2, data = x2)$residuals)[,1]
+
+
+m5.1 <- lm(Y ~ X1 + X2 + X3, data = x2)
+m5.2 <- lm(Y ~ X1_X2res + X3, data = x2)
+m5.3 <- lm(Y ~ X1_X2res + X3_X2res, data = x2)
+m5.4 <- lm(Y_X2res ~ X1_X2res + X3_X2res, data = x2)
+
+
+tab_model(m5.1, m5.2, m5.3, m5.4, digits = 3, show.se = T, show.ci = F, collapse.se = T, show.p = F, show.r2 = F, show.obs = F)
+
+```
+
+
+### Bottom line
+
+Think about what you're doing! :) 
+
+Why are you using a two step procedure? 
+
+Try to be careful because it can easily change the nature of the actual effect and in the case of scaling, the size of the effects.
+
 
