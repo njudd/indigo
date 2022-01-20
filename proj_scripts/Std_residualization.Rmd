@@ -140,7 +140,7 @@ fit_0.56 <- euler(c("X1" = tss_X1, "X2" = tss_X2, "Y" = tss_Y,
                     "X2&Y" = tss_X1*(overlap_Y_X2),
                     "X1&X2&Y" = tss_Y*overlap_all),
                   shape = "ellipse")
-corr_0.56 <- plot(fit_0.56, fills = c("lightblue", "lightgray", "darkblue"))
+corr_0.56 <- plot(fit_0.56, fills = c("red", "white", "darkred"))
 corr_0.56
 
 
