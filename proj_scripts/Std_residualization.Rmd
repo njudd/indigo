@@ -219,7 +219,7 @@ m4 <- update(m4,data=x100)
 m3 <- update(m3,data=x100)
 
 
-tab_model(m1, m4, m3, show.se = T, collapse.se = F, digits = 3, show.ci = F, show.p = T, show.r2 = F, show.obs = F)
+tab_model(m1, m4, m3, show.se = T, collapse.se = F, digits = 3, show.ci = F, show.p = T, show.r2 = F, show.obs = F, emph.p = F)
 
 ```
 
@@ -247,17 +247,13 @@ m5.3 <- lm(Y ~ X1_X2res + X3_X2res, data = x2)
 m5.4 <- lm(Y_X2res ~ X1_X2res + X3_X2res, data = x2)
 
 
-tab_model(m5.1, m5.2, m5.3, m5.4, digits = 3, show.se = T, show.ci = F, collapse.se = T, show.p = F, show.r2 = F, show.obs = F)
+tab_model(m5.1, m5.2, m5.3, m5.4, digits = 3, show.se = T, show.ci = F, collapse.se = T, show.p = T, show.r2 = F, show.obs = F, emph.p = F)
 
 ```
 
 
 ### Bottom line
 
-Think about what you're doing! :) 
-
-Why are you using a two step procedure? 
-
-Try to be careful because it can easily change the nature of the actual effect and in the case of scaling, the size of the effects.
+Try to be careful because it can easily change the nature of the actual effect, the size of the effects (e.g., scaling), and our confidence of the effect (i.e., p-vals/SE). :)
 
 
