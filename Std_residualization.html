@@ -1735,7 +1735,7 @@ X1_X2res
 <p><span class="math display">\[
  \dfrac{\beta_{1}*\operatorname{SD_{X}}}{SD_{Y}}
 \]</span></p>
-<p>If we standardize our residualized model it will inflate the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it.</p>
+<p>If we standardize our residualized model it will inflate (mess wtih) the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. As you can see on the equation above it will either inflate or deflate depending on the amount of signal <code>X2</code> accounts for in <code>Y</code> or <code>X1</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -2011,7 +2011,8 @@ X1_X2res
 </tr>
 </table>
 </div>
-<p>To drive this point home, here are the models refit to the first 80 subjects…</p>
+<p>If we accidentally scale <code>X1_X2res</code> in the model with <code>Y</code> as the predictor, it will default our effect size since <code>Y</code> continues to have a sd of 1 while <code>X1_X2res</code> is now less.</p>
+<p>To drive the point home of different standard errors, here are the models refit to the first 80 subjects…</p>
 <div class="layout-chunk" data-layout="l-body">
 <table style="border-collapse:collapse; border:none;">
 <tr>
