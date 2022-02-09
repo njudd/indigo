@@ -176,7 +176,7 @@ $$
  \dfrac{\beta_{1}*\operatorname{SD_{X}}}{SD_{Y}}
 $$
 
-If we standardize our residualized model it will inflate the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. 
+If we standardize our residualized model it will inflate (mess wtih) the effect sizes. This is because we are rescaling it (see equation above). While this may seem obvious at first it can sneak up on you, for example if you fit a structural equation model where you residualized the variable for age and now you standardize it. As you can see on the equation above it will either inflate or deflate depending on the amount of signal `X2` accounts for in `Y` or `X1`.
 
 
 ```{r table std, echo=FALSE}
@@ -203,8 +203,9 @@ This one is problematic, as the magnitude of the effect stays the same **yet** t
 tab_model(m1, m4, m3, show.se = T, collapse.se = F, digits = 3, show.ci = F, show.p = F, show.r2 = F, show.obs = F)
 ```
 
+If we accidentally scale `X1_X2res` in the model with `Y` as the predictor, it will default our effect size since `Y` continues to have a sd of 1 while `X1_X2res` is now less.
 
-To drive this point home, here are the models refit to the first 80 subjects...
+To drive the point home of different standard errors, here are the models refit to the first 80 subjects...
 
 ```{r models subset refit, echo=F}
 
