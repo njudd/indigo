@@ -15,7 +15,7 @@ The package consists of a single function `geom_rain()`. Yet it is quite powerfu
 
 ![image](/assets/images/time_group_cov.png)
 
-To download the package run the code below and checkout the [vignette](https://njudd.com/raincloud-ggrain.htmlSS) to get started!
+To download the package run the code below and checkout the [vignette](https://njudd.com/raincloud-ggrain.html) to get started!
 
 
 ```
