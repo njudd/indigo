@@ -15,6 +15,14 @@ layout: page
 
 <p>In my free time, I love to rock climb, travel, and surf. Sometimes I get a bit too addicted to podcasts... I grew up in La Jolla, and lived in Dublin, Umeå, Melbourne, Munich, Amsterdam, Stockholm and Nijmegen. Right now I'm in Amsterdam, roommates with <a href="https://brunosauce.net/">Prof. Bruno Saaauce</a>. </p>
 
+<h2>Projects</h2>
+
+<ul>
+	<li><a href="https://www.njudd.com/raincloud-ggrain/">ggrain: The Raincloud Package</a></li>
+		<li><a href="https://www.njudd.com/std_residualization">Residualization reinterpretation</a></li>
+	<li><a href="https://www.njudd.com/spatial-cognition/">Spatial Cognition RCT</a></li>
+</ul>
+
 <h2>Skills</h2>
 
 <ul class="skill-list">
@@ -24,12 +32,4 @@ layout: page
 	<li>Surfing</li>
 	<li>Python</li>
 	<li>SQL</li>
-</ul>
-
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://www.njudd.com/raincloud-ggrain/">ggrain: The Raincloud Package</a></li>
-		<li><a href="https://www.njudd.com/std_residualization">Residualization reinterpretation</a></li>
-	<li><a href="https://www.njudd.com/spatial-cognition/">Spatial Cognition RCT</a></li>
 </ul>
