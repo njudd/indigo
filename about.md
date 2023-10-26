@@ -13,7 +13,7 @@ layout: page
 <p>I am currently on a temporary contract and *open to offers* within or outside of academia. It would be cool to collaborate, so don’t hesitate to reach out! 
  </p>
 
-<p>In my free time, I love to rock climb, travel, and surf. Sometimes I get a bit too addicted to podcasts...</p>
+<p>In my free time, I love to rock climb, travel, and surf. Sometimes I get a bit too addicted to podcasts... I grew up in La Jolla, and lived in Dublin, Umeå, Melbourne, Munich, Amsterdam, Stockholm and Nijmegen. Right now I'm in Amsterdam, roommates with <a href="https://brunosauce.net/">Prof. Bruno Saaauce</a>. </p>
 
 <h2>Skills</h2>
 
