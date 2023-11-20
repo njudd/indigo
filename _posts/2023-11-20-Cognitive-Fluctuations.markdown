@@ -33,7 +33,7 @@ For an in-depth look check out the [**preprint**](https://psyarxiv.com/b29rn/) o
 
 Our performance on cognitive tasks fluctuates: the same individual completing the same task will differ in their response’s moment-to-moment. For decades cognitive fluctuations have been implicitly ignored – treated as measurement error – with a focus instead on aggregates such as mean performance. Leveraging dense trial-by-trial data and novel time-series methods we explored variability as an intrinsically important phenotype. Across eleven cognitive tasks with over 7 million trials, we found highly reliable interindividual differences in cognitive variability in every task we examined. These differences are both qualitatively and quantitatively distinct from mean performance. Moreover, we found that a single dimension for variability across tasks was inadequate, demonstrating that previously posited global mechanisms for cognitive variability are at least partially incomplete. Our findings indicate that variability is a fundamental part of the human phenotype, with the potential to offer rich, novel insights into cognitive performance.
 
-<iframe src="https://docs.google.com/file/d/1-pIwj7bktXt8G2LcczVmbijD-nKT2kGc/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://docs.google.com/file/d/1RY6igAo6OHZ7_L4cUQKx7pNZI5sKsU02/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 ---
 ### Brief Overview
