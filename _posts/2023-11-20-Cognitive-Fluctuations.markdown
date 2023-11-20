@@ -1,29 +1,37 @@
 ---
-title: "Spatial Cognition RCT"
+title: "Cognitive fluctuations"
 layout: post
-date: 2021-03-23 22:10
+date: 2023-11-20 22:10
 #tag: jekyll
 # image: /assets/proj_imgs/spatialcognition/img1.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "Training spatial cognition enhances mathematical learning in a randomized study of 17,000 children"
+description: "Cognitive fluctuations: How a variability perspective can offer a novel phenotype"
 category: project
 #author: johndoe
 externalLink: false
 ---
 
-We set out to answer the question:
+# How a variability perspective can offer a novel phenotype
 
- - Does training different types of spatial tasks help kids improve in mathematics?
 
-For an in-depth look check out the [paper](https://rdcu.be/ck9fP) or the [Github repo](https://github.com/njudd/spatialcognition)! If you have any further questions just reach out and ask me :)
+We set out to answer a few fundamental questions on variability:
+
+1. **Ubiquity** are interindividual differences in intraindividual variability a consistent property of cognitive tasks?
+
+2. **Structure** how are individual differences in variability across tasks related?
+
+3. **Discrimination** is variability a distinct concept from mean performance?
+
+
+For an in-depth look check out the [**preprint**](https://psyarxiv.com/b29rn/) or [OSF](https://osf.io/z53an/) for code! If you have any further questions just reach out and ask me :)
 
  ![img1](/assets/proj_imgs/spatialcognition/img1.png)
 
 ### Abstract
 
-Spatial and mathematical abilities are strongly associated. Here, we analysed data from 17,648 children, aged 6–8 years, who performed 7 weeks of mathematical training together with randomly assigned spatial cognitive training with tasks demanding more spatial manipulation (mental rotation or tangram), maintenance of spatial information (a visuospatial working memory task) or spatial, non-verbal reasoning. We found that the type of cognitive training children performed had a significant impact on mathematical learning, with training of visuospatial working memory and reasoning being the most effective. This large, community-based study shows that spatial cognitive training can result in transfer to academic abilities, and that reasoning ability and maintenance of spatial information is relevant for mathematics learning in young children.
+Our performance on cognitive tasks fluctuates: the same individual completing the same task will differ in their response’s moment-to-moment. For decades cognitive fluctuations have been implicitly ignored – treated as measurement error – with a focus instead on aggregates such as mean performance. Leveraging dense trial-by-trial data and novel time-series methods we explored variability as an intrinsically important phenotype. Across eleven cognitive tasks with over 7 million trials, we found highly reliable interindividual differences in cognitive variability in every task we examined. These differences are both qualitatively and quantitatively distinct from mean performance. Moreover, we found that a single dimension for variability across tasks was inadequate, demonstrating that previously posited global mechanisms for cognitive variability are at least partially incomplete. Our findings indicate that variability is a fundamental part of the human phenotype, with the potential to offer rich, novel insights into cognitive performance.
 
 <iframe src="https://docs.google.com/file/d/1-pIwj7bktXt8G2LcczVmbijD-nKT2kGc/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
