@@ -1,7 +1,7 @@
 ---
 title: "Cognitive fluctuations"
 layout: post
-date: 2023-11-20 12:10
+date: 2023-11-22 08:10
 #tag: jekyll
 # image: /assets/proj_imgs/spatialcognition/img1.png
 headerImage: true
