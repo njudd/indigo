@@ -40,7 +40,12 @@ Our performance on cognitive tasks fluctuates: the same individual completing th
 ---
 ### Key Literature
 
-
+- Nesselroade, J. R. (1991). [The Warp and the Woof of the Developmental Fabric](https://paperpile.com/shared/Lx9CBv). 19.
+- Aristodemou, M., Rommelse, N., & Kievit, R. (2023). [Attentiveness modulates reaction-time variability: findings from a population-based sample of 1032 children](https://psyarxiv.com/j2n5w/download?format=pdf). Psyarxiv
+- Judd, N., & Klingberg, T. (2021). [Training spatial cognition enhances mathematical learning in a randomized study of 17,000 children](https://paperpile.com/shared/BsZ8G4). Nature Human Behaviour, 5, 1548–1554.
+- Dhawale, A. K., Smith, M. A., & Ölveczky, B. P. (2017). [The Role of Variability in Motor Learning.](https://paperpile.com/shared/miLHYZ) Annual Review of Neuroscience, 40, 479–498.
+- Tucker-Drob, E. M. (2019). Cognitive Aging and Dementia: A Life-Span Perspective. Annual Review of Developmental Psychology, 1(1), 177–196.
+- 
 
 
 
