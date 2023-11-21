@@ -1,9 +1,9 @@
 ---
 title: "Cognitive fluctuations"
 layout: post
-date: 2023-11-22 08:10
+date: 2023-11-21 08:10
 #tag: jekyll
-# image: /assets/proj_imgs/spatialcognition/img1.png
+# image: /assets/proj_imgs/cogflucts/title_neat.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
@@ -18,16 +18,16 @@ externalLink: false
 
 We set out to answer a few fundamental questions on variability:
 
-1. **Ubiquity** are interindividual differences in intraindividual variability a consistent property of cognitive tasks?
+1. **Ubiquity:** do we find cognitive variability in each task?
 
-2. **Structure** how are individual differences in variability across tasks related?
+2. **Structure:** how are individual differences in variability across tasks related?
 
-3. **Discrimination** is variability a distinct concept from mean performance?
+3. **Discrimination:** is variability a distinct concept from mean performance?
 
 
 For an in-depth look check out the [**preprint**](https://psyarxiv.com/b29rn/) or [OSF](https://osf.io/z53an/) for code! If you have any further questions just reach out and ask me :)
 
- ![img1](/assets/proj_imgs/spatialcognition/img1.png)
+ ![img1](/assets/proj_imgs/cogflucts/title_neat.png)
 
 ### Abstract
 
