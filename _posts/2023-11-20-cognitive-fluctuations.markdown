@@ -40,12 +40,29 @@ Our performance on cognitive tasks fluctuates: the same individual completing th
 ---
 ### Key Literature
 
+#### Conceptual
+
 - Nesselroade, J. R. (1991). [The Warp and the Woof of the Developmental Fabric](https://paperpile.com/shared/Lx9CBv). 19.
-- Aristodemou, M., Rommelse, N., & Kievit, R. (2023). [Attentiveness modulates reaction-time variability: findings from a population-based sample of 1032 children](https://psyarxiv.com/j2n5w/download?format=pdf). Psyarxiv
-- Judd, N., & Klingberg, T. (2021). [Training spatial cognition enhances mathematical learning in a randomized study of 17,000 children](https://paperpile.com/shared/BsZ8G4). Nature Human Behaviour, 5, 1548–1554.
+- Siegler, R. (2007). [Cognitive variability](https://paperpile.com/shared/HXrKcH). Developmental Science.
+- Siegler, R. (1994). Cognitive variability: [A key to understanding cognitive development. Current Directions in Psychological Science](https://paperpile.com/shared/9YFjhJ).
 - Dhawale, A. K., Smith, M. A., & Ölveczky, B. P. (2017). [The Role of Variability in Motor Learning.](https://paperpile.com/shared/miLHYZ) Annual Review of Neuroscience, 40, 479–498.
-- Tucker-Drob, E. M. (2019). Cognitive Aging and Dementia: A Life-Span Perspective. Annual Review of Developmental Psychology, 1(1), 177–196.
-- 
+
+#### Neurodevelopmental
+
+- Kofler, M. J., Rapport, M. D., Sarver, D. E., Raiker, J. S., Orban, S. A., Friedman, L. M., & Kolomeyer, E. G. (2013). [Reaction time variability in ADHD: a meta-analytic review of 319 studies](https://paperpile.com/shared/IlCXLs). Clinical Psychology Review, 33(6), 795–811.
+- Karalunas, S. L., Geurts, H. M., Konrad, K., Bender, S., & Nigg, J. T. (2014). [Annual research review: Reaction time variability in ADHD and autism spectrum disorders: measurement and mechanisms of a proposed trans-diagnostic phenotype](https://paperpile.com/shared/fYHEH3). Journal of Child Psychology and Psychiatry, and Allied Disciplines, 55(6), 685–710.
+- Aristodemou, M., Rommelse, N., & Kievit, R. (2023). [Attentiveness modulates reaction-time variability: findings from a population-based sample of 1032 children](https://psyarxiv.com/j2n5w/download?format=pdf). Psyarxiv
+
+#### Sample & DSEM
+
+- Judd, N., & Klingberg, T. (2021). [Training spatial cognition enhances mathematical learning in a randomized study of 17,000 children](https://paperpile.com/shared/BsZ8G4). Nature Human Behaviour, 5, 1548–1554.
+- McNeish, D., & Hamaker, E. L. (2020). [A primer on two-level dynamic structural equation models for intensive longitudinal data in Mplus](https://paperpile.com/shared/ZSJ6lD). Psychological Methods, 25(5), 610–635.
+- Hamaker, E. L., Asparouhov, T., Brose, A., Schmiedek, F., & Muthén, B. (2018). [At the Frontiers of Modeling Intensive Longitudinal Data: Dynamic Structural Equation Models for the Affective Measurements from the COGITO Study](https://paperpile.com/shared/40CDhA). Multivariate Behavioral Research, 53(6), 820–841.
+
+#### Neural Variability
+
+- MacDonald, S. W. S., Li, S.-C., & Bäckman, L. (2009). [Neural underpinnings of within-person variability in cognitive functioning](https://paperpile.com/shared/uQxQEH). Psychology and Aging, 24(4), 792–808.
+- Waschke, L., Kloosterman, N. A., Obleser, J., & Garrett, D. D. (2021). [Behavior needs neural variability](https://paperpile.com/shared/ylHYDq). Neuron, 109(5), 751–766.
 
 
 
