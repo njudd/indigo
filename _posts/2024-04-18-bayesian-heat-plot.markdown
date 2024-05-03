@@ -25,11 +25,16 @@ My latest study ([preregistration](https://osf.io/rv38z)) aimed to see if an add
 
 My study compared a *causal* estimate (from a natural experiment) to a *correlational* one (total years of educational attainment). Clear visualization is essential in having your message come across, to do this I came up with the Bayesian Heat Plot. I doubt I'm the first to ever think of it, after a cursory search I found something [similar](https://www.nicebread.de/a-short-taxonomy-of-bayes-factors/).
 
-The Y-axis is your model/parameters of interest (in this case neuroimaging measures). The x-axis shows Bayes Factors which are plotted on a log scale. You can group it (in this example; causal versus correlational), yet that's not necessary. I edited the plot a bit to add a dashed line connecting the estimates and included intuitive arrows showing the direction of evidence. 
+<div class="side-by-side">
+    <div class="toleft">
+      <p>The Y-axis is your model/parameters of interest (in this case neuroimaging measures). The x-axis shows Bayes Factors which are plotted on a log scale. You can group it (in this example; causal versus correlational), yet that's not necessary. I edited the plot a bit to add a dashed line connecting the estimates and included intuitive arrows showing the direction of evidence.</p> 
+    </div>
 
- ![img2](/assets/proj_imgs/bayesheat/BayesianHeatPlot_image_2.png)
-
-This plot is directly inspired by Jeffrey 1961 strength of evidence criteria, seen in Figure 1 (snagged from [Gadie et. al., 2017](https://bmjopen.bmj.com/content/7/7/e014920)).
+    <div class="toright">
+        <img class="image" src="https://njudd.com/assets/proj_imgs/bayesheat/BayesianHeatPlot_image_2.png" alt="Alt Text">
+        <figcaption class="caption">Jeffrey 1961 criteria (from Gadie et. al., 2017)</figcaption>
+    </div>
+</div>
 
 ## Code to set up data and packages for plotting
 
