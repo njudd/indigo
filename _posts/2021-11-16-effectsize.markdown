@@ -15,7 +15,7 @@ externalLink: false
 
 ## Materials for KI Dep Clinical Neuroscience Seminar
 
-[**Click here for a brief overview of the project**](njudd.com/spatial-cognition)
+[**Click here for a brief overview of the project**](https://njudd.com/spatial-cognition)
 
 **Slide Deck** (without videos)
 
