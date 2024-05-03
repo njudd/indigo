@@ -23,13 +23,3 @@ layout: page
 	<li><a href="https://www.njudd.com/spatial-cognition/">Spatial Cognition RCT</a></li>
 </ul>
 
-<h2>Skills</h2>
-
-<ul class="skill-list">
-	<li>Experimental Design</li>
-	<li>R programming</li>
-	<li>Git</li>
-	<li>Surfing</li>
-	<li>Python</li>
-	<li>SQL</li>
-</ul>
