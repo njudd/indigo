@@ -1,5 +1,5 @@
 ---
-title: "Open source causal inference material"
+title: "Causal inference material APS 2024"
 layout: post
 date: 2024-05-23 10:02
 #tag: jekyll
