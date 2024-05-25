@@ -5,6 +5,9 @@ layout: page
 
 <h2>Publications</h2>
 
+**Judd, N.**, & Kievit, R. (2024). [No effect of additional education on long-term brain structure: a preregistered natural experiment in over 30,000 individuals.](https://doi.org/10.1101/2024.05.17.594682) *bioRxiv* (p. 2024.05.17.594682). 
+
+**Judd, N.**, Aristodemou, M., Klingberg, T., & Kievit, R. (2024). [Interindividual Differences in Cognitive Variability Are Ubiquitous and Distinct From Mean Performance in a Battery of Eleven Tasks.](https://journalofcognition.org/articles/10.5334/joc.371) *Journal of Cognition*, 7(1), 45.
 
 **Judd, N.**, Sauce, B., & Klingberg, T. (2022). [Schooling substantially improves intelligence, but neither lessens nor widens the impacts of socioeconomics and genetics.](https://www.nature.com/articles/s41539-022-00148-5) *NPJ Science of Learning*, 7(1), 33.
 
