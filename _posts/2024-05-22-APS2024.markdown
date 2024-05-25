@@ -20,7 +20,7 @@ Association for Psychological Science Symposium: Triangulating Mixed Methods to 
 
 **Slide Deck**
 
-<iframe src="https://docs.google.com/file/d/1ELBwRJCzhSbzZB4Eepa_rfB4i4cFPv_c/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://docs.google.com/file/d/1EzaxuTKZ9y_B_u38oB_iVtRbwuqVgk7X/preview" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 ## My empirical work with Natural Experiments
 
