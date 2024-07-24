@@ -27,6 +27,7 @@ We set out to answer a few fundamental questions on variability:
 
 For an in-depth look check out the [**preprint**](https://psyarxiv.com/b29rn/) or [OSF](https://osf.io/z53an/) for code! If you have any further questions just reach out and ask me :)
 
+#### [Now Published](https://journalofcognition.org/articles/371/files/664c8bae871a1.pdf)
 
 ### Talk
 
