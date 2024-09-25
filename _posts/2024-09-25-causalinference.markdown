@@ -1,5 +1,5 @@
 ---
-title: "Causal inference for education materials"
+title: "Causal inference for education"
 layout: post
 date: 2024-09-25 10:02
 #tag: jekyll
