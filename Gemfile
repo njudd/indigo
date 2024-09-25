@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '>=3.0'
-
 group :jekyll_plugins do
     gem 'github-pages'
     gem 'jekyll-admin'
