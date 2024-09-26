@@ -1,5 +1,5 @@
 ---
-title: "Causal inference for developmental neuroscience"
+title: "Causal inference for neuroscience"
 layout: post
 date: 2024-09-25 10:02
 #tag: jekyll
