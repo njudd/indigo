@@ -1,5 +1,5 @@
 ---
-title: "Causal inference for education"
+title: "Causal inference for developmental neuroscience"
 layout: post
 date: 2024-09-25 10:02
 #tag: jekyll
@@ -7,7 +7,7 @@ date: 2024-09-25 10:02
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "Causal inference resources for APS 2024 talk"
+description: "Causal inference resources for testing the effect of education, specifically regression discontinuity"
 category: project
 # author: johndoe
 externalLink: false
