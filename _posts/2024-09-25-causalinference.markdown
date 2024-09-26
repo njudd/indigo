@@ -16,6 +16,7 @@ externalLink: false
 
 Understanding how the environment affects the brain is crucial, given the lifelong impacts of early neural and cognitive differences. Natural experiments leverage external changes in the environment (e.g., local policy changes or ecological events) to isolate environmental exposures. This is done with a cutoff which divides a population into an exposed and unexposed group. Crucially, it should be seen as a *design* rather than a statistical test - in turn, it is crucial to test the validity of the design. Under the right assumptions, these events with ‘random-like’ properties (i.e., exogenous) allow us to estimate the causal effect of environmental exposures on an outcome.
 
+ ![img1](/assets/proj_imgs/rd/Fig1_4_take2.png)
 
 #### My empirical work using natural experiments to study the effect of schooling:
 
