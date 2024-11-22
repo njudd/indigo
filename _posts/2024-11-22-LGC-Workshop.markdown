@@ -6,5 +6,5 @@ projects: true
 hidden: true # don't count this post in blog pagination
 description: "Latent Growth Curve Modeling Workshop Lifespan Cognitive Dynamics Lab Donders Institute"
 category: project
-externalLink: assignment_workshop_LGMs.html
+externalLink: https://njudd.com/assignment_workshop_LGMs.html
 ---
